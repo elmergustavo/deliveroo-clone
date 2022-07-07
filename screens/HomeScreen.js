@@ -1,4 +1,4 @@
-import { View, Text, SafeAreaView, Image } from "react-native";
+import { View, Text, SafeAreaView, Image, TextInput, ScrollView } from "react-native";
 import React, { useLayoutEffect } from "react";
 import { useNavigation } from "@react-navigation/native";
 import {
@@ -7,6 +7,7 @@ import {
   SearchIcon,
   AdjustmentsIcon,
 } from "react-native-heroicons/outline";
+
 const HomeScreen = () => {
   const navigation = useNavigation();
 
@@ -16,9 +17,10 @@ const HomeScreen = () => {
     });
   }, []);
   return (
-    <SafeAreaView>
-      <Text className="text-red-700 py-6">
-        <View className="flex-row pb-3 items-center mx-4 space-x-2">
+    <SafeAreaView className="bg-white pt-5">
+      <Text className="text-red-700 py-7">
+        {/* Header */}
+        <View className="flex-row pb-3 items-center  space-x-2 px-4">
           <Image
             source={{
               uri: "https://links.papareact.com/wru",
@@ -34,16 +36,29 @@ const HomeScreen = () => {
               <ChevronDownIcon size={20} color="#00CCBB" />
             </Text>
           </View>
-          <UserIcon size={35} color="#00CCBB" />
-          <UserIcon size={35} color="#00CCBB" />
-          <UserIcon size={35} color="#00CCBB" />
-          <UserIcon size={35} color="#00CCBB" />
-          <UserIcon size={35} color="#00CCBB" />
-          <UserIcon size={35} color="#00CCBB" />
-          <UserIcon size={35} color="#00CCBB" />
-          
-          
+          <View className="px-32">
+            <UserIcon size={35} color="#00CCBB" />
+          </View>
         </View>
+        {/* Search */}
+        <View className="flex-row items-center space-x-2 pb-2 mx-4 px-4">
+          <View className="flex-row flex-1 space-x-3 bg-gray-200 p-3 rounded-lg">
+            <SearchIcon color="gray" size={20} />
+            <TextInput
+              placeholder="Bienvenidos al restaurantes Deliver Now"
+              keyboardType="default"
+            />
+          </View>
+
+          <View className="px-8">
+            <AdjustmentsIcon color="#00CCBB" />
+          </View>
+        </View>
+
+        {/* Body */}
+        <ScrollView>
+
+        </ScrollView>
       </Text>
     </SafeAreaView>
   );
