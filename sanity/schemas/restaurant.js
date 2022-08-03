@@ -10,7 +10,7 @@ export default {
       validation: (Rule) => Rule.required(),
     },
     {
-      name: "sport_description",
+      name: "short_description",
       type: "string",
       title: "Short description",
       validation: (Rule) => Rule.max(200),
